@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Oswald", sans-serif;
+    background-color: #0D0E20;
+}
+
+.contenedor-principal {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden; /*Esto sirve para ocultar lo que sobra en el contenedor*/
+    position: relative;
+    height: auto; /*Para que la altura sea dinamica segun el contenido*/
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10rem;
+}
+
+/*BARRA NAVEGACION*/
+
+header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; /* Asegura que quede encima */
+    background: transparent;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #00000057; /* Fondo semi-transparente */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5rem;
+    z-index: 1000;
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.navbar-menu li {
+    position: relative;
+    display: inline-block;
+    position: relative;
+}
+
+.navbar-menu li a {
+    font-size: 1.125rem;
+    letter-spacing: 0.20625rem;
+    text-decoration: none;
+    color: #F0EDE5;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+.navbar-menu > li::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #F0EDE5;
+    transition: transform 0.25s ease-out;
+}
+
+.navbar-menu > li:hover::after {
+    transform: scaleX(1);
+}
+
+.navbar-hamburger {
+    display: none; /* Ocultar por defecto */
+    cursor: pointer;
+}
+
+.navbar-mobile {
+    display: none; /* Ocultar por defecto */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #00000057; /* Fondo semi-transparente */
+    padding: 1rem 0;
+}
+
+/*LOGO*/
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: 3px solid transparent;
+    padding: 0.2rem;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.navbar-logo img {
+    border-radius: 50%;
+}
+
+/*CONFIGURAR AQUI MENU HAMBURGUESA*/
+
+.abrir-menu {
+    position: absolute;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+
+.abrir-menu{
+    top: -50%;
+    right: 20px;
+    transform: translate(-50%);
+}
+
+#check{display: none;}
+@media (max-width: 1200px) {
+    .abrir-menu  {
+    display: block;
+    z-index: 1001;
+    }
+
+    .navbar-menu {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.3s ease-in-out;
+    }
+
+    #check:checked ~ .navbar-menu {   
+        right: 0;
+    }
+
+    .abrir-menu {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+    }
+}
+/*FIN MENU HAMBURGUESA*/
+
+
+/*login*/
+
+.login-container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+    color: #333333;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #555555;
+}
+
+input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+}
+
+.signup-link {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #555555;
+}
+
+.signup-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/*footer*/
+footer {
+    background-color: #0D0E20;
+    text-align: center;
+    padding: 20px 0;
+    color: white;
+}
+
+.contenedor-footer {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contenido-footer {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px;
+}
+
+.contenido-footer h4 {
+    padding-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.contenido-footer p {
+    font-weight: 300;
+    margin: 10px;
+    font-size: 1.3rem;
+}
+
+.contenido-footer img {
+    padding-top: 20px;
+}
+
+.contenido-footer a {
+    padding-left: 10px;
+}
+
+.contenido-footer a img:hover{
+    transform: translateY(-5px);
+    transition: all 0.5s ease-in-out;
+}
+/*FIN FOOTER*/

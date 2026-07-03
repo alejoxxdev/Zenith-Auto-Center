@@ -1,0 +1,222 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Oswald", sans-serif;
+}
+
+
+body {
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.form-container {
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #d0d0d000;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.titulo-admin {
+    text-align: center;
+    margin: 20px 0;
+    color: #ffffff;
+    position: relative;
+    z-index: 1;
+}
+
+.bg-admin {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://i.pinimg.com/originals/2b/de/7d/2bde7d14133968f97d6c4dd898edb989.gif') no-repeat center center/cover;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+
+}
+
+nav ul {
+    padding: 10px;
+    background-color: #00000060;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    border-radius: 8px;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    width: 50vw;
+    margin-bottom: 20px;
+    background-color: #00000032;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form input[type="password"],
+form input[type="date"],
+form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 25px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form input[type="file"] {
+    margin-bottom: 25px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 8px;
+    margin-bottom: 25px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+button {
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #00000032;
+    color: #ddd;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+
+}
+
+.btn-editar {
+    background-color: #2196F3;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn-eliminar {
+    background-color: #f44336;
+    margin-top: 20px;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+div.botones-contenedor {
+    display: flex;
+    gap: 10px;
+    border: none;
+}
+
+/* Ajuste para la celda de acciones en la tabla */
+td.acciones {
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    gap: 10px;
+}
+
+td.acciones form {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+/* Opcional: para que los botones no tengan margen superior en la tabla */
+.btn-eliminar,
+.btn-editar {
+    border: none;
+    margin-top: 0;
+}

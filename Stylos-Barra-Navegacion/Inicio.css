@@ -1,0 +1,523 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Oswald", sans-serif;
+    background-color: #0D0E20;
+}
+
+.contenedor-principal {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: auto;
+}
+
+/*BARRA NAVEGACION*/
+
+header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; /* Asegura que quede encima */
+    background: transparent;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #00000057; /* Fondo semi-transparente */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5rem;
+    z-index: 1000;
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.navbar-menu li {
+    position: relative;
+    display: inline-block;
+}
+
+.navbar-menu li a {
+    font-size: 1.125rem;
+    letter-spacing: 0.20625rem;
+    text-decoration: none;
+    color: #F0EDE5;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+.navbar-menu > li::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #F0EDE5;
+    transition: transform 0.25s ease-out;
+}
+
+.navbar-menu > li:hover::after {
+    transform: scaleX(1);
+}
+
+
+.navbar-hamburger {
+    display: none; /* Ocultar por defecto */
+    cursor: pointer;
+}
+
+.navbar-mobile {
+    display: none; /* Ocultar por defecto */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #00000057; /* Fondo semi-transparente */
+    padding: 1rem 0;
+}
+
+/*LOGO*/
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: 3px solid transparent;
+    padding: 0.2rem;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.navbar-logo img {
+    border-radius: 50%;
+}
+
+/*CONFIGURAR AQUI MENU HAMBURGUESA*/
+
+.abrir-menu {
+    position: absolute;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+
+.abrir-menu{
+    top: -50%;
+    right: 20px;
+    transform: translate(-50%);
+}
+
+#check{display: none;}
+@media (max-width: 1200px) {
+    .abrir-menu  {
+    display: block;
+    z-index: 1001;
+    }
+
+    .navbar-menu {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.3s ease-in-out;
+        }
+
+    #check:checked ~ .navbar-menu {   
+        right: 0;
+    }
+
+    .abrir-menu {
+        position: absolute;
+        top: 50px;
+        right: 30px;
+    }
+}
+/*FIN MENU HAMBURGUESA*/
+
+/*INICIO CARRUSEL*/
+/*CONTENEDOR PRINCIPAL*/
+
+.contenedor-carrusel h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #F5FDE9;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    letter-spacing: 5px;
+}
+
+.contenedor-carrusel-imagenes {
+    display: flex;
+    position: relative;
+    width: 100vw; /* Asegura que ocupe todo el ancho de la ventana */
+    height: 500px;
+}
+
+.contenedor-carrusel {
+    display: grid;
+    grid-template-columns: repeat(3,100%);
+    animation: carrusel 7s infinite;
+    transition: transform 0.5 ease-in-out;
+    width: 100vw;         /* Asegura que ocupe todo el ancho de la ventana */
+    height: object-fit; /* Ajusta la altura al contenido */
+}
+
+.contenedor-carrusel > div {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 100%;
+    flex-shrink: 0;
+}
+
+.imagen1 {
+    background-image: url(/imagenes-inicio/carrusel/Lamborghini-urus.webp);
+    position: relative;
+}
+
+.imagen2 {
+    background-image: url(/imagenes-inicio/carrusel/mercedez.png);
+    position: relative;
+}
+
+.imagen3 {
+    background-image: url(/imagenes-inicio/carrusel/Porsche\ Taycan\ Turbo\ S\ 2020.jpg);
+    position: relative;
+}
+
+@keyframes carrusel {
+    0% {transform: translateX(0%);}
+    20% {transform: translateX(0%);}
+    25% {transform: translateX(-100%);}
+    45% {transform: translateX(-100%);}
+    50% {transform: translateX(-200%);}
+    70% {transform: translateX(-200%);}
+    75% {transform: translateX(-100%);}
+    100% {transform: translateX(0%);}
+}
+
+
+/*FIN CARRUSEL*/
+
+/*INCIO DE SECCION DE CARROS Y FRASES*/
+
+.frase_titulo {
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    font-size: 45px;
+    color: #F5F0E9;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.caja_img_grande {
+    display: flex;
+    justify-content: center;
+    grid-template-columns: repeat(2, 0.5fr); 
+    gap: 3rem; 
+    justify-self: center; 
+    width: 90%;
+}
+
+.caja_imagen {
+    width: 100%;       
+    max-width: 400px;  
+    height: 300px;
+}
+
+.caja_imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+/*COLLAGE*/
+
+.caja_collage {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-template-rows: repeat(4, 150px);  
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    gap: 1rem;
+}
+
+.collage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.collage1 {
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 2;
+}
+
+.collage2 {
+    grid-column: 4/ span 4;
+    grid-row: 1 / span 2;
+}
+
+.collage3 {
+    grid-column: 3/ span 4;
+    grid-row: 3/ span 2;
+}
+
+.collage4 {
+    grid-column: 1 / span 2;
+    grid-row: 3/ span 2;
+}
+/*FIN COLLAGE*/
+
+.caja_boton {
+    text-align: center;
+}
+
+.boton_frase {
+    margin: auto 0;
+    margin-bottom: 30px;
+    background-color: #F5F0E9;
+    padding: 1.5rem 2rem;
+    border-radius: 20px;
+    display: inline-block;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #0D0E20;
+}
+
+.boton_frase:hover {
+    color: #3C507D; 
+}
+
+/*COLLAGE 2*/
+.caja_collagee {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-template-rows: repeat(2, 200px);
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    gap: 1rem;
+}
+
+.collagee img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+}
+/*FIN COLLAGE 2*/
+
+@media (max-width: 1024px) {
+    .caja_img_grande {
+        width: 90%;
+    }
+
+    .caja_collage,
+    .caja_collagee {
+        width: 95%;
+        gap: 0.7rem;
+    }
+
+    .frase_titulo {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .frase_titulo {
+        font-size: 2rem;
+    }
+
+    .caja_img_grande {
+        width: 95%;
+    }
+
+    .caja_imagen {
+        width: 90%;
+        height: 200px;
+    }
+
+    .caja_collage{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 150px);
+        width: 90%;
+        gap: 0.5rem;
+    }
+
+    .caja_collagee {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 200px);
+        width: 90%;
+        gap: 0.5rem;
+    }
+
+    .caja_collage > div,
+    .caja_collagee > div {
+        grid-column: auto !important;
+        grid-row: auto !important;
+    }
+
+    .boton_frase {
+        width: 60%;
+    }
+}
+
+@media (max-width: 480px) {
+    .frase_titulo {
+        font-size: 1.1rem;
+    }
+    
+    .caja_img_grande {
+        grid-template-columns: (2, 1fr);
+        grid-template-rows: repeat(3, 100px);
+        width: 90%;
+        gap: 0.7rem;
+    }
+    
+    .caja_imagen {
+        width: 100%;
+        height: 120px;
+    }
+
+    .caja_collage {
+        grid-template-columns: (2, 1fr);
+        grid-template-rows: repeat(2, 100px);
+        width: 90%;
+        gap: 0.3rem;
+    }
+
+    .caja_collagee {
+        grid-template-columns: (2, 1fr);
+        grid-template-rows: (8, 100px);
+        width: 90%;
+        gap: 0.3rem;
+    }
+
+    .collage img, .collagee img {
+        border-radius: 15px;
+    }
+    
+    .caja_collage > div,
+    .caja_collagee > div {
+        grid-column: auto !important;
+        grid-row: auto !important;
+    }
+
+    .boton_frase {
+        width: 90%;
+    }
+}
+/*FIN DE SECCION DE CARROS Y FRASES*/
+
+
+
+/* INICIO FOOTER */
+
+footer {
+    background-color: #0D0E20;
+    text-align: center;
+    padding: 20px 0;
+    color: white;
+}
+
+.contenedor-footer {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contenido-footer {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px;
+}
+
+.contenido-footer h4 {
+    padding-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.contenido-footer p {
+    font-weight: 300;
+    margin: 10px;
+    font-size: 1.3rem;
+}
+
+.contenido-footer img {
+    padding-top: 20px;
+}
+
+.contenido-footer a {
+    padding-left: 10px;
+}
+
+.contenido-footer a img:hover{
+    transform: translateY(-5px);
+    transition: all 0.5s ease-in-out;
+}
+/*FIN FOOTER*/
+
+@media (max-width: 1024px) {
+    .contenedor-carrusel-imagenes div{
+        max-height: 500px;
+    }
+    .contenedor-carrusel h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contenedor-carrusel-imagenes div {
+        max-height: 400px;
+    }
+    .contenedor-carrusel h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor-carrusel-imagenes div {
+        max-height: 400px;
+    }
+    .contenedor-carrusel h2 {
+        font-size: 1.2rem;
+    }
+}
